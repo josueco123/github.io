@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #04446f;
+    color: #fff;
+    padding: 10px;
+  }
+
+  .footer {
+    background-color: #04446f;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+  .nav-list {
+    list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  }
+  
+  .nav-list li {
+    margin-left: 20px;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 3px 0;
+  }
+  
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .animation, .gradient-content {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .scrolling-text {
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    animation: scroll 10s linear infinite;
+    background: linear-gradient(to right, rgb(71, 6, 6), rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .gradient-content {
+    background: linear-gradient(to right, #ff6b6b, #ffa94d);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  @keyframes scroll {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      grid-template-rows: auto 1fr auto;
+    }
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+    .menu-toggle  {
+        display: flex;
+    }
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .nav-list.active {
+        display: flex;
+      }
+    
+      .nav-list li {
+        margin: 0;
+        padding: 10px 0;
+      }
+    .main {
+      display: block;
+      padding: 10px;
+    }
+  }
+  
